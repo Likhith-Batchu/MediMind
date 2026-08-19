@@ -1,0 +1,30 @@
+# --- Environment / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Python / backend ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+*.db
+
+# --- Node / frontend ---
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Uploaded / generated data (NEVER commit real medical files) ---
+uploads/
+*.pdf
+!docs/**/*.pdf
