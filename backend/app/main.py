@@ -1,16 +1,12 @@
 """
 FastAPI application factory.
-
-This file stays intentionally thin — it only wires together config,
-middleware, and routers. All real logic lives in services/, all
-DB access lives in repositories/, all routes stay thin wrappers.
 """
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.routes import health
+from app.routes import auth, health
 
 app = FastAPI(title=settings.APP_NAME, debug=settings.DEBUG)
 
@@ -23,6 +19,7 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/api/v1")
+app.include_router(auth.router, prefix="/api/v1")
 
 
 @app.get("/")
