@@ -1,0 +1,22 @@
+{
+  "dataset": "UCI Indian Liver Patient Dataset",
+  "random_state": 42,
+  "test_size": 0.2,
+  "duplicate_rows_removed": 13,
+  "training_records": 456,
+  "test_records": 114,
+  "positive_class": "Selector == 1 (liver patient)",
+  "features": [
+    "Age",
+    "TB",
+    "DB",
+    "Alkphos",
+    "Sgpt",
+    "Sgot",
+    "TP",
+    "ALB",
+    "A/G Ratio",
+    "Gender"
+  ],
+  "warning": "Research prototype only. Not clinically validated; not intended for diagnosis or treatment."
+}

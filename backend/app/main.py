@@ -1,3 +1,4 @@
+
 """
 FastAPI application factory.
 """
@@ -6,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.routes import auth, health
+from app.routes import auth, health, liver_risk
 
 app = FastAPI(title=settings.APP_NAME, debug=settings.DEBUG)
 
@@ -20,8 +21,14 @@ app.add_middleware(
 
 app.include_router(health.router, prefix="/api/v1")
 app.include_router(auth.router, prefix="/api/v1")
+app.include_router(liver_risk.router, prefix="/api/v1")
 
 
 @app.get("/")
 def root():
-    return {"message": "MediMind AI API is running. See /docs for API documentation."}
+    return {
+        "message": (
+            "MediMind AI API is running. "
+            "See /docs for API documentation."
+        )
+    }
